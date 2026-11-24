@@ -1,0 +1,12 @@
+# Train the SleepOnset-GRU on the Muse training participants and score it on
+# the held-out validation participants (88 recordings). From the competition
+# repo root:
+#   benchopt prepare tracks/sleep_onset --config tracks/sleep_onset/sleep_onset_gru.yml
+#   benchopt run     tracks/sleep_onset --config tracks/sleep_onset/sleep_onset_gru.yml
+objective:
+  - Sleep-onset[training=True]
+dataset:
+  - Interaxon2026Muse[eval_split=val]
+solver:
+  - SleepOnset-GRU
+seed: 42
